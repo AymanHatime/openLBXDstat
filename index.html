@@ -29,9 +29,17 @@
 
     <main id="content">
         <div id="upload-section">
-            <label for="lbzip">Upload your Letterboxd data zip</label>
-            <input type="file" id="lbzip" accept=".zip">
-            <div id="lbzip-status"></div>
+            <div id="upload-section-input">
+                <label for="lbzip">Upload your Letterboxd data zip</label>
+                <input type="file" id="lbzip" accept=".zip">
+                <div id="lbzip-status"></div>
+            </div>
+
+            <div id="upload-section-button">
+                <button id="process-data-btn" disabled>Process Data</button>
+            </div>
+
+            <div id="upload-section-processing-status"></div>
         </div>
     </main>
 
