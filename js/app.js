@@ -4,6 +4,9 @@ const processDataButton = document.getElementById('process-data-btn');
 
 let file = null;
 
+/**
+ * Collect the user data file and validate it is a .zip file.
+ */
 userData.addEventListener('change', () => {
     processDataButton.disabled = true;
     file = userData.files[0];
@@ -22,6 +25,9 @@ userData.addEventListener('change', () => {
     }
 });
 
+/**
+ * Unzip the user data.
+ */
 processDataButton.addEventListener('click', async () => {
     const sectionProcessingStatus = document.getElementById('upload-section-processing-status');
     userData.disabled = true;
@@ -31,7 +37,6 @@ processDataButton.addEventListener('click', async () => {
     try {
         const zip = await JSZip.loadAsync(file);    
         console.log(zip);
-            
     } catch (error) {
         sectionProcessingStatus.textContent = `Error processing file: ${error.message}`;
         userData.disabled = false;
