@@ -3,6 +3,7 @@ const userDataStatus = document.getElementById('lbzip-status');
 const processDataButton = document.getElementById('process-data-btn');
 
 let file = null;
+let formatedDataJson = [];
 
 /**
  * Collect the user data file and validate it is a .zip file.
@@ -37,6 +38,24 @@ processDataButton.addEventListener('click', async () => {
     try {
         const zip = await JSZip.loadAsync(file);    
         console.log(zip);
+        
+        sectionProcessingStatus.textContent = 'Folder unzipped successfully.';
+
+        for (const [relativePath, zipEntry] of Object.entries(zip.files)) {
+            if (!zipEntry.dir) {
+                const fileData = await zipEntry.async('string');
+                let jsonData;
+                Papa.parse(fileData, {
+                    complete: function(results) {
+                        jsonData = results;
+                    }
+                });
+                formatedDataJson.push(jsonData);
+            }
+        }
+
+        console.log(formatedDataJson);
+        sectionProcessingStatus.textContent = 'All files processed successfully.';
     } catch (error) {
         sectionProcessingStatus.textContent = `Error processing file: ${error.message}`;
         userData.disabled = false;
