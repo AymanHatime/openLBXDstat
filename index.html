@@ -19,18 +19,18 @@
 </head>
 
 <body> 
-    <header>
-        <h1>openLBXDstat</h1>
-    </header>
-
-    <nav>
-        <a href="">Home</a>
+    <nav class="is-hidden">
+        <ul>
+            <!-- Should be identified by section id with 'nav-' before. -->
+            <li id="nav-dashboard-section" tclass="nav-menu-element">Dashboard</li>
+            <li id="nav-diary-section" class="nav-menu-element">Diary</li>
+        </ul>
     </nav>
 
     <main id="content">
 
         <!-- This section is used to upload user data. -->
-        <div id="upload-section">
+        <section id="upload-section">
             <div id="upload-section-input">
                 <label for="lbzip">Upload your Letterboxd data zip</label>
                 <input type="file" id="lbzip" accept=".zip">
@@ -42,7 +42,18 @@
             </div>
 
             <div id="upload-section-processing-status"></div>
-        </div>
+        </section>
+
+        <section id="dashboard-section" class="is-hidden">
+            <h2>Dashboard</h2>
+            <div id="dashboard-content">
+
+            </div>
+        </section>
+
+        <section id="diary-section" class="is-hidden">
+            <h2>Diary</h2>
+        </section>
     </main>
 
     <footer>

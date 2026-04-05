@@ -56,8 +56,44 @@ processDataButton.addEventListener('click', async () => {
 
         console.log(formatedDataJson);
         sectionProcessingStatus.textContent = 'All files processed successfully.';
+        document.querySelector('nav').classList.remove('is-hidden');
+        changeSection('dashboard-section');
     } catch (error) {
         sectionProcessingStatus.textContent = `Error processing file: ${error.message}`;
         userData.disabled = false;
     }
 });
+
+
+/**
+ * Navigation Managment
+ */
+const navLinks = document.querySelectorAll('nav li');
+navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        const clickedLink = event.currentTarget.id.replace('nav-', '');
+        changeSection(clickedLink);
+    });
+});
+
+
+/**
+ * Navigation function to switch between sections of the application.
+ */
+function changeSection (sectionId) {
+    const sections = document.querySelectorAll('main > section');
+    let foundSection = false;
+    
+    sections.forEach(section => {
+        if (section.id === sectionId) {
+            section.classList.remove('is-hidden');
+            foundSection = true;
+        } else {
+            section.classList.add('is-hidden');
+        }
+    });
+
+    if (!foundSection) {
+        console.error(`Section with id "${sectionId}" not found.`);
+    }
+}
