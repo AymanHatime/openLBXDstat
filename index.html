@@ -7,7 +7,7 @@
     <title>openLBXDstat</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
 
     <link rel="stylesheet" href="styles/index.css">
 
@@ -19,12 +19,24 @@
 </head>
 
 <body> 
+    <header>
+        <h1>open <span>LDXD</span> stat</h1>
+        <p>
+            Welcome to my website ! It permits you to get more statistics about your Letterboxd account.
+            This is a personnal & unnoficial project. It have no affiliation with Letterboxd.
+            All you have to do is to export your data from Letterboxd, and then upload the zip file here. 
+            The website will process the data and give you access to a dashboard with various statistics 
+            about your account. More than you can get from the free plan of Letterboxd. Of course, none of
+            your data will be stored on the server, everything is processed locally in your browser. This
+            project is open source, you can find the code on 
+            <a href="https://github.com/AymanHatime/openLBXDstat">GitHub</a>.
+        </p>
+    </header>
+
     <nav class="is-hidden">
-        <ul>
-            <!-- Should be identified by section id with 'nav-' before. -->
-            <li id="nav-dashboard-section" tclass="nav-menu-element">Dashboard</li>
-            <li id="nav-diary-section" class="nav-menu-element">Diary</li>
-        </ul>
+        <!-- Should be identified by section id with 'nav-' before. -->
+        <button id="nav-dashboard-section" class="nav-menu-element">Dashboard</button>
+        <button id="nav-diary-section" class="nav-menu-element">Diary</button>
     </nav>
 
     <main id="content">
@@ -33,12 +45,12 @@
         <section id="upload-section">
             <div id="upload-section-input">
                 <label for="lbzip">Upload your Letterboxd data zip</label>
-                <input type="file" id="lbzip" accept=".zip">
+                <input type="file" id="lbzip" accept=".zip" class="primary-button">
                 <div id="lbzip-status"></div>
             </div>
 
             <div id="upload-section-button">
-                <button id="process-data-btn" disabled>Process Data</button>
+                <button id="process-data-btn" class="primary-button" disabled>Process Data</button>
             </div>
 
             <div id="upload-section-processing-status"></div>
@@ -63,7 +75,7 @@
     <script src="./js/app.js"></script>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
 </body>
 
 </html>

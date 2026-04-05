@@ -68,7 +68,7 @@ processDataButton.addEventListener('click', async () => {
 /**
  * Navigation Managment
  */
-const navLinks = document.querySelectorAll('nav li');
+const navLinks = document.querySelectorAll('nav button');
 navLinks.forEach(link => {
     link.addEventListener('click', (event) => {
         const clickedLink = event.currentTarget.id.replace('nav-', '');

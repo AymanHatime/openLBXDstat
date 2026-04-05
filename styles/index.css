@@ -5,9 +5,30 @@
 }
 
 body {
-    background-color: darkgray;
+    background-color: rgba(60, 60, 60, 1);
+    color: white;
+    font-family: 'century gothic', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header, nav, main, footer {
+    width: 85%;
+    margin: 10px 0;
 }
 
 .is-hidden {
     display: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(225, 130, 40);
+    font-weight: bold;
+}
+
+a:hover {
+    color: rgb(210, 90, 15);
 }
