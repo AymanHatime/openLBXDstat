@@ -1,0 +1,25 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(30, 30, 30);
+    border-radius: 20px;
+    box-shadow: 0 0 1px gray;
+    padding: 5px 0;
+}
+
+nav button {
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 2px white;
+    border-radius: 15px;
+    color: white;
+    font-size: 1.2em;
+    padding: 3px 8px;
+}
+
+nav button:hover, nav .current-page {
+    border-color: black;
+    color: black;
+    background-color: rgb(225, 130, 40);
+    cursor: pointer;
+}

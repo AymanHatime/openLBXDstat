@@ -73,6 +73,13 @@ navLinks.forEach(link => {
     link.addEventListener('click', (event) => {
         const clickedLink = event.currentTarget.id.replace('nav-', '');
         changeSection(clickedLink);
+        navLinks.forEach(navLink => {
+            if (navLink === event.currentTarget) {
+                navLink.classList.add('current-page');
+            } else {
+                navLink.classList.remove('current-page');
+            }
+        });
     });
 });
 
