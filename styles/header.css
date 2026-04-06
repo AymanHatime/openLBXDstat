@@ -1,0 +1,33 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1{
+    text-align: center;
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 5px rgb(180, 180, 180);
+    margin-bottom: 20px;
+}
+
+#title-span {
+    color: rgb(225, 130, 40);
+    font-size: 1.5em;
+    margin: 0 5px;
+}
+
+.title-span-underline {
+    text-decoration: underline rgb(225, 130, 40);
+}
+
+header p {
+    max-width: 900px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: rgb(200, 200, 200);
+}
