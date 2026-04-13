@@ -16,7 +16,7 @@ body {
 
 header, nav, main, footer {
     width: 85%;
-    margin: 10px 0;
+    margin: 12px 0;
 }
 
 main {
@@ -24,7 +24,7 @@ main {
 }
 
 .is-hidden {
-    display: none;
+    display: none !important;
 }
 
 a {
@@ -53,7 +53,7 @@ header h1{
     align-items: center;
     justify-content: center;
     text-shadow: 0 0 5px rgb(180, 180, 180);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 #title-span {

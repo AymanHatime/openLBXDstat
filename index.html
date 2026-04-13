@@ -7,6 +7,8 @@
     <title>openLBXDstat</title>
 
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/main.css">
+
     <!-- JSZip - Used to unzip files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -27,24 +29,26 @@
         </p>
     </header>
 
-    <nav class="is-hidden4">
+    <nav class="is-hidden">
         <!-- Should be identified by section id with 'nav-' before. -->
-        <button id="nav-dashboard-section" class="nav-menu-element">Dashboard</button>
-        <button id="nav-diary-section" class="nav-menu-element">Diary</button>
+        <button id="nav-dashboard-section">Dashboard</button>
+        <button id="nav-diary-section">Diary</button>
     </nav>
 
     <main id="content">
 
         <!-- This section is used to upload user data. -->
         <section id="upload-section">
+            <h2>Upload your Letterboxd data ZIP</h2>
+
             <div id="upload-section-input">
-                <label for="lbzip">Upload your Letterboxd data zip</label>
-                <input type="file" id="lbzip" accept=".zip" class="primary-button">
+                <button id="upload-btn">Upload</button>
+                <input type="file" id="lbzip" accept=".zip" class="is-hidden">
                 <div id="lbzip-status"></div>
             </div>
 
             <div id="upload-section-button">
-                <button id="process-data-btn" class="primary-button" disabled>Process Data</button>
+                <button id="process-data-btn" class="primary-btn" disabled>Analyze</button>
             </div>
 
             <div id="upload-section-processing-status"></div>

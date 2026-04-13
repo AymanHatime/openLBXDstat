@@ -1,0 +1,65 @@
+main h2 {
+    font-size: 1.75em;
+    margin-bottom: 15px;
+}
+
+.primary-btn {
+    color: rgb(225, 130, 40);
+    background-color: black;
+    border: solid 2px black;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-family: 'century gothic', sans-serif;
+    font-weight: bold;
+    padding: 5px 12px;
+}
+
+.primary-btn:hover{
+    border-color: black;
+    color: black;
+    background-color: rgb(255, 150, 60);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.primary-btn:disabled {
+    color: rgb(150, 150, 150);
+    background-color: rgb(30, 30, 30);
+    border-color: rgb(150, 150, 150);
+    cursor: not-allowed;
+}
+
+/* ------------------------------------- */
+/* upload-section styles */
+/* ------------------------------------- */
+#upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#upload-section div {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#upload-btn {
+    color: rgb(200, 200, 200);
+    font-family: 'century gothic', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 30px 75px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+#upload-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}

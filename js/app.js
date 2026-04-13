@@ -26,6 +26,10 @@ userData.addEventListener('change', () => {
     }
 });
 
+document.getElementById('upload-btn').addEventListener('click', () => {
+    userData.click();
+});
+
 /**
  * Unzip the user data.
  */
@@ -58,6 +62,8 @@ processDataButton.addEventListener('click', async () => {
         sectionProcessingStatus.textContent = 'All files processed successfully.';
         document.querySelector('nav').classList.remove('is-hidden');
         changeSection('dashboard-section');
+
+        document.querySelectorAll('header p').forEach(p => p.classList.add('is-hidden'));
     } catch (error) {
         sectionProcessingStatus.textContent = `Error processing file: ${error.message}`;
         userData.disabled = false;
