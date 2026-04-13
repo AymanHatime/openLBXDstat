@@ -52,10 +52,19 @@ processDataButton.addEventListener('click', async () => {
                 Papa.parse(fileData, {
                     complete: function(results) {
                         jsonData = results;
+                        jsonData.name = relativePath;
                     }
                 });
                 formatedDataJson.push(jsonData);
             }
+        }
+
+        const filesNeeded = ["watched.csv", "ratings.csv", "reviews.csv", "watchlist.csv", "diary.csv"];
+        for (const file of filesNeeded) {
+            if (!formatedDataJson.some(data => data.name === file)) {
+                throw new Error(`Missing required file: ${file}`);               
+            }
+
         }
 
         console.log(formatedDataJson);
@@ -64,6 +73,7 @@ processDataButton.addEventListener('click', async () => {
         changeSection('dashboard-section');
 
         document.querySelectorAll('header p').forEach(p => p.classList.add('is-hidden'));
+        startStat();
     } catch (error) {
         sectionProcessingStatus.textContent = `Error processing file: ${error.message}`;
         userData.disabled = false;
