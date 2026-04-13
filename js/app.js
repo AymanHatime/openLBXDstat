@@ -3,7 +3,7 @@ const userDataStatus = document.getElementById('lbzip-status');
 const processDataButton = document.getElementById('process-data-btn');
 
 let file = null;
-let formatedDataJson = [];
+let files = [];
 
 /**
  * Collect the user data file and validate it is a .zip file.
@@ -40,8 +40,7 @@ processDataButton.addEventListener('click', async () => {
     sectionProcessingStatus.textContent = 'Processing...';
 
     try {
-        const zip = await JSZip.loadAsync(file);    
-        console.log(zip);
+        const zip = await JSZip.loadAsync(file);
         
         sectionProcessingStatus.textContent = 'Folder unzipped successfully.';
 
@@ -55,19 +54,19 @@ processDataButton.addEventListener('click', async () => {
                         jsonData.name = relativePath;
                     }
                 });
-                formatedDataJson.push(jsonData);
+                files.push(jsonData);
             }
         }
 
         const filesNeeded = ["watched.csv", "ratings.csv", "reviews.csv", "watchlist.csv", "diary.csv"];
         for (const file of filesNeeded) {
-            if (!formatedDataJson.some(data => data.name === file)) {
+            if (!files.some(data => data.name === file)) {
                 throw new Error(`Missing required file: ${file}`);               
             }
 
         }
 
-        console.log(formatedDataJson);
+        console.log(files);
         sectionProcessingStatus.textContent = 'All files processed successfully.';
         document.querySelector('nav').classList.remove('is-hidden');
         changeSection('dashboard-section');
