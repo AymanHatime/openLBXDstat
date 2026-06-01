@@ -1,0 +1,35 @@
+#dashboard-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#dashboard-content > div {
+    padding: 5px 20px;
+    border: 1px solid rgb(255, 150, 60);
+    border-radius: 5px;
+    box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 10px;
+    min-height: 160px;
+    min-width: 260px;
+}
+#dashboard-total-movies {
+    font-size: 1.8em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#dashboard-total-movies p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#total-movies-count {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0 10px;
+}
