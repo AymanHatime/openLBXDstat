@@ -5,12 +5,22 @@ function startStat () {
         }
     }
     console.log(files['watched']);
-
+    console.log("---------------------------------------");
+    console.log(files);
+    
+    
     totalMovies();
+    totalMoviesWatchlist();
 }
 
 function totalMovies () {
     const countNumber = files['watched'].length;
     const totalMoviesElement = document.getElementById('total-movies-count');
+    totalMoviesElement.textContent = countNumber;
+}
+
+function totalMoviesWatchlist () {
+    const countNumber = files['watchlist'].length;
+    const totalMoviesElement = document.getElementById('total-watchlist-movies-count');
     totalMoviesElement.textContent = countNumber;
 }

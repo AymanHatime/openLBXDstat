@@ -13,7 +13,7 @@
     min-height: 160px;
     min-width: 260px;
 }
-#dashboard-total-movies {
+.dashboard-total-movies {
     font-size: 1.8em;
     text-align: center;
     display: flex;
@@ -22,13 +22,13 @@
     align-items: center;
 }
 
-#dashboard-total-movies p {
+.dashboard-total-movies p {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-#total-movies-count {
+.dashboard-movie-number {
     font-size: 2.5em;
     font-weight: bold;
     margin: 0 10px;
