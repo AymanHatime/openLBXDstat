@@ -4,23 +4,26 @@ function startStat () {
             files[currentFile.name.replace('.csv', '')] = currentFile.data;
         }
     }
-    console.log(files['watched']);
-    console.log("---------------------------------------");
-    console.log(files);
     
-    
-    totalMovies();
-    totalMoviesWatchlist();
+    displayNumberOfMovies('total-movies', files['watched'].length, 'You have watched', 'movies');
+    displayNumberOfMovies('total-watchlist-movies', files['watchlist'].length, 'You have', 'movies to watch');
 }
 
-function totalMovies () {
-    const countNumber = files['watched'].length;
-    const totalMoviesElement = document.getElementById('total-movies-count');
-    totalMoviesElement.textContent = countNumber;
-}
+function displayNumberOfMovies (idDiv, number, title, desscription) {
+    const div = document.getElementById(idDiv);
 
-function totalMoviesWatchlist () {
-    const countNumber = files['watchlist'].length;
-    const totalMoviesElement = document.getElementById('total-watchlist-movies-count');
-    totalMoviesElement.textContent = countNumber;
+    const titleElement = document.createElement('p');
+    titleElement.textContent = title;
+    div.appendChild(titleElement);
+
+    const displayedValue = document.createElement('p');
+
+    const spanNumber = document.createElement('span');
+    spanNumber.textContent = number;
+    spanNumber.classList.add('dashboard-movie-number');
+    displayedValue.appendChild(spanNumber);
+
+    displayedValue.appendChild(document.createTextNode(' ' + desscription));
+
+    div.appendChild(displayedValue);
 }
